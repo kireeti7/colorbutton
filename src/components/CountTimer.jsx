@@ -6,8 +6,10 @@ export default function CountTimer() {
     useEffect(() => {
         setTimeout(() => {
             setTimer(timer + 1)
-        }, 1000) 
-    },[timer])
+        }, 1000);
+
+        return () => clearTimeout(timer) 
+    },[]);
     return (
         <div>
             <h2>the timer count is {timer}</h2>
